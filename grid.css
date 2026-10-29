@@ -1,0 +1,10 @@
+.grid {
+  display: flex;
+  gap: 12px;
+}
+
+.widget {
+  width: 160px;
+  padding: 16px;
+  border: 1px solid #ccc;
+}
