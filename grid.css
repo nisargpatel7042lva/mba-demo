@@ -1,10 +1,13 @@
 .grid {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
 .widget {
-  width: 160px;
+  flex: 0 1 160px;
+  max-width: 100%;
   padding: 16px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
