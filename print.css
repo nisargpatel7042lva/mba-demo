@@ -1,0 +1,59 @@
+/* Print stylesheet for the widget grid (issue #8).
+   Loaded with media="print", so it only applies when printing. */
+
+/* Fits both A4 (210 mm) and US Letter (8.5 in) in portrait: size the content to the narrower A4
+   width minus margins (~186 mm), which also fits Letter. */
+@page {
+  size: portrait;
+  margin: 12mm;
+}
+
+/* No navigation, backgrounds or shadows on paper. */
+.site-nav,
+nav {
+  display: none !important;
+}
+
+*,
+*::before,
+*::after {
+  background: none !important;
+  box-shadow: none !important;
+  color: #000 !important;
+}
+
+body {
+  margin: 0;
+  max-width: 186mm;
+}
+
+/* Two widgets per row that always fit the page width. */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6mm;
+}
+
+.widget {
+  flex: 0 0 calc(50% - 3mm);
+  max-width: calc(50% - 3mm);
+  border: 1px solid #999;
+  /* Never split a widget across two pages. */
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Each widget prints its title and its link URL. */
+.widget-title a {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.widget-title a[href]::after {
+  content: " (" attr(href) ")";
+  display: block;
+  margin-top: 2mm;
+  font-size: 9pt;
+  font-weight: normal;
+  word-break: break-all;
+}

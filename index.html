@@ -1,9 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Widget grid</title><link rel="stylesheet" href="grid.css"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Widget grid</title>
+  <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="print.css" media="print">
+</head>
 <body>
-  <div class="grid">
-    <div class="widget">One</div><div class="widget">Two</div><div class="widget">Three</div><div class="widget">Four</div>
-  </div>
+  <header class="site-nav">
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/widgets">Widgets</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+  <main class="grid">
+    <article class="widget">
+      <h2 class="widget-title"><a href="https://example.com/widgets/one">One</a></h2>
+    </article>
+    <article class="widget">
+      <h2 class="widget-title"><a href="https://example.com/widgets/two">Two</a></h2>
+    </article>
+    <article class="widget">
+      <h2 class="widget-title"><a href="https://example.com/widgets/three">Three</a></h2>
+    </article>
+    <article class="widget">
+      <h2 class="widget-title"><a href="https://example.com/widgets/four">Four</a></h2>
+    </article>
+  </main>
 </body>
 </html>
