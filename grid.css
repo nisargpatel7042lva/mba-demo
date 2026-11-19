@@ -11,3 +11,22 @@
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
+.site-nav {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  background: #f6f6f6;
+}
+
+.widget {
+  background: #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.widget-title {
+  margin: 0;
+  font-size: 1rem;
+}
