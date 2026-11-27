@@ -1,3 +1,39 @@
+/* Colours for both themes. The page follows the system setting (prefers-color-scheme).
+   Contrast targets (WCAG AA): text 4.5:1, widget borders and other UI edges 3:1. */
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --surface: #fafafa;
+  --surface-nav: #f2f2f2;
+  --border: #767676;
+  --link: #0b57d0;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #e8e8e8;
+    /* lifted surfaces instead of inverted colours: widgets sit slightly above the page */
+    --surface: #1e1e1e;
+    --surface-nav: #181818;
+    --border: #8a8a8a;
+    --link: #8ab4f8;
+    /* a dark shadow barely shows on black, so add a faint light edge instead */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -8,8 +44,10 @@
   flex: 0 1 160px;
   max-width: 100%;
   padding: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   box-sizing: border-box;
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .site-nav {
@@ -17,13 +55,8 @@
   gap: 16px;
   padding: 12px 0;
   margin-bottom: 16px;
-  border-bottom: 1px solid #ddd;
-  background: #f6f6f6;
-}
-
-.widget {
-  background: #fafafa;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-nav);
 }
 
 .widget-title {
